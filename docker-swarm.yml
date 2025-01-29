@@ -2,7 +2,8 @@ services:
   app:
     image: jellyfin/jellyfin
     user: 1000:1000
-    network_mode: host
+    networks: 
+      - outside
     volumes:
       - jelly-config:/config
       - jelly-cache:/cache
@@ -36,4 +37,8 @@ volumes:
       device: ":/srv/docker/jellfin/cache"
   mnt-public:
   mnt-tyler:
-    
+
+networks:
+  outside:
+    external:
+    name: "host"
