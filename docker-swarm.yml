@@ -4,8 +4,8 @@ services:
     user: 1000:1000
     network_mode: host
     volumes:
-      - ./config:/config
-      - ./cache:/cache
+      - jelly-config:/config
+      - jelly-cache:/cache
       - mnt-public:/media/public:ro
       - mnt-tyler:/media/tyler:ro
 # Optional - extra fonts to be used during transcoding with subtitle burn-in
@@ -22,6 +22,18 @@ services:
 #      - 'host.docker.internal:host-gateway'
 
 volumes:
+  jelly-config:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=fileserver.localdomain.lan,rw,vers=4.1
+      device: ":/srv/docker/jellfin/config"
+  jelly-cache:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=fileserver.localdomain.lan,rw,vers=4.1
+      device: ":/srv/docker/jellfin/cache"
   mnt-public:
   mnt-tyler:
     
