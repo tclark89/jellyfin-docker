@@ -36,7 +36,9 @@ volumes:
       o: addr=fileserver.localdomain.lan,rw,vers=4.1
       device: ":/srv/docker/jellyfin/cache"
   mnt-public:
+    external: true
   mnt-tyler:
+    external: true
 
 networks:
   outside:
