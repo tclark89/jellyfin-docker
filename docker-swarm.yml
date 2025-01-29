@@ -40,5 +40,5 @@ volumes:
 
 networks:
   outside:
-    external:
+    external: true
     name: "host"
