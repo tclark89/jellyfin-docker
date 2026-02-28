@@ -27,14 +27,14 @@ volumes:
     driver: local
     driver_opts:
       type: nfs
-      o: addr=192.168.10.10,rw,vers=4.1
-      device: ":/srv/docker/jellyfin-docker/config"
+      o: addr=192.168.10.20,rw,vers=4.1
+      device: ":/mnt/docker/jellyfin-docker/config"
   jellyfin-cache:
     driver: local
     driver_opts:
       type: nfs
-      o: addr=192.168.10.10,rw,vers=4.1
-      device: ":/srv/docker/jellyfin-docker/cache"
+      o: addr=192.168.10.20,rw,vers=4.1
+      device: ":/mnt/docker/jellyfin-docker/cache"
   mnt-public:
     external: true
   mnt-tyler:
