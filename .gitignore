@@ -1,2 +1,5 @@
 cache
 config
+postgres-data
+jellystat-backup-data
+jellfin.env
